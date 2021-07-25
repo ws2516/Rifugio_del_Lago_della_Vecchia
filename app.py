@@ -5,7 +5,6 @@ import gspread
 import tabulate
 import email_sign_up
 import os
-import data_pipeline
 
 from flask import Flask, request, render_template, session, redirect
 from flask import send_from_directory
