@@ -4,12 +4,12 @@ import datetime
 from datetime import datetime
 import os
 
-def write_to_sheet(name): #, email, telephone, quantity, arrival, departure, message):
+def write_to_sheet(name, email, telephone, quantity, arrival, departure, message):
 	credentials = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
 	creds = ServiceAccountCredentials.from_json_keyfile_name(credentials)
 	client = gspread.authorize(creds)
 	sheet = client.open("Prenotare").sheet1
-	row = [name] #, email, telephone, quantity, arrival, departure, message, str(datetime.today())] help
+	row = [name , email, telephone, quantity, arrival, departure, message, str(datetime.today())]
 	sheet.append_row(row)
 	return 'Thank you, we have received your request!'
 

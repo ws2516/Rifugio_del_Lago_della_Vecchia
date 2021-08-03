@@ -1,7 +1,6 @@
 import flask
 import gunicorn
 import gspread
-import tabulate
 import os
 import email_sign_up
 
@@ -19,7 +18,13 @@ def main():
     
     if flask.request.method == 'POST':
     	
+    	name = flask.request.form['name']
     	email = flask.request.form['email']
+    	telephone = flask.request.form['telephone']
+    	quantity = flask.request.form['quantity']
+    	arrival = flask.request.form['arrival']
+    	departure = flask.request.form['departure']
+    	message = flask.request.form['message']
     	
     	thank_you = email_sign_up.write_to_sheet(email)
     	
