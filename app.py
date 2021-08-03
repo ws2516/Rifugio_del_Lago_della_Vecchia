@@ -22,8 +22,8 @@ def main():
     	email = flask.request.form['email']
     	
     	thank_you = email_sign_up.write_to_sheet(email)
-
-        return flask.render_template('index.html', thanks = thank_you)
+    	
+    	return flask.render_template('index.html', thanks = thank_you)
 
 
 if __name__ == '__main__':
