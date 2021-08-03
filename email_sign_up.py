@@ -9,7 +9,7 @@ def write_to_sheet(name): #, email, telephone, quantity, arrival, departure, mes
 	creds = ServiceAccountCredentials.from_json_keyfile_name(credentials)
 	client = gspread.authorize(creds)
 	sheet = client.open("Prenotare").sheet1
-	row = [name] #, email, telephone, quantity, arrival, departure, message, str(datetime.today())]
+	row = [name] #, email, telephone, quantity, arrival, departure, message, str(datetime.today())] help
 	sheet.append_row(row)
 	return 'Thank you, we have received your request!'
 
