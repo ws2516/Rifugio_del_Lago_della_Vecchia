@@ -26,7 +26,7 @@ def main():
     	departure = flask.request.form['departure']
     	message = flask.request.form['message']
     	
-    	thank_you = email_sign_up.write_to_sheet(email)
+    	thank_you = email_sign_up.write_to_sheet(name, email, telephone, quantity, arrival, departure, message)
     	
     	return flask.render_template('index.html', thanks = thank_you)
 
