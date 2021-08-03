@@ -30,6 +30,9 @@ def main():
     	
     	return flask.render_template('index.html', thanks = thank_you)
 
+@app.errorhandler(500)
+def pageNotFound(error):
+    return flask.render_template('500.html')
 
 if __name__ == '__main__':
     app.run()
